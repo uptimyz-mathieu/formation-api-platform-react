@@ -14,7 +14,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
  * @ORM\Entity(repositoryClass=InvoiceRepository::class)
  * @ApiResource(
  *     attributes={
- *     "pagination_enable"=true
+ *     "pagination_enable"=false
  *     },
  *  itemOperations={"GET", "PUT", "DELETE", "increment"={"method"="post", "path"="/invoices/{id}/increment",
  *     "controller"="App\Controller\InvoiceIncrementationController",
