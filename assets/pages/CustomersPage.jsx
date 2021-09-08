@@ -44,7 +44,7 @@ const CustomersPage = props => {
     const handleSearch = ({currentTarget}) => {
         setSearch(currentTarget.value);
         setCurrentPage(1);
-    }
+    };
 
     const itemPerPage = 8;
     //Filtrage des Customers en fonction de la recherche

@@ -14,6 +14,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import CustomersPage from "./pages/CustomersPage";
 import InvoicesPage from "./pages/InvoicesPage";
+import LoginPage from "./pages/LoginPage";
 
 //require("../styles/app.css");
 
@@ -29,6 +30,7 @@ const App = () => {
 
         <main className="container pt-5">
             <Switch>
+                <Route path="/login" component={LoginPage} />
                 <Route path="/invoices" component={InvoicesPage} />
                 <Route path="/customers" component={CustomersPage} />
                 <Route path="/" component={HomePage} />
