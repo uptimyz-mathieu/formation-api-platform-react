@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import Pagination from "../components/Pagination";
 import axios from "axios";
 import moment from "moment";
+import {Link} from "react-router-dom";
 
 const STATUS_CLASSES = {
     PAID: "success",
@@ -38,7 +39,12 @@ const InvoicesPage = (props) => {
 
     return (
         <>
-            <h1>Liste des factures</h1>
+            <div className="d-flex justify-content-between align-items-center">
+                <h1>Liste des factures</h1>
+                <Link to="/invoices/new" className="btn btn-outline-light">
+                    Créer une facture
+                </Link>
+            </div>
 
             <table className="table table-hover">
                 <thead>

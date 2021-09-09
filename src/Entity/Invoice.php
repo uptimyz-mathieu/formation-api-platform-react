@@ -51,7 +51,7 @@ class Invoice
     private $sentAt;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"invoices_read", "customers_read", "invoices_subresource"})
      */
     private $status;
