@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import Pagination from "../components/Pagination";
 import CustomersAPI from "../services/customersAPI";
 import {Link} from "react-router-dom";
+import {toast} from "react-toastify";
+import TableLoader from "../components/loaders/TableLoader";
 
 const CustomersPage = props => {
 
@@ -32,6 +34,7 @@ const CustomersPage = props => {
         // 2. L'approche Pessimiste
         try {
             await CustomersAPI.delete(id)
+            toast.warning("DELETE SUCESS !");
         } catch(error) {
             setCustomers(originalCustomers);
             console.log(error.response);
@@ -92,7 +95,9 @@ const CustomersPage = props => {
                     <tr key={customers.id}>
                     <td>{customers.id}</td>
                     <td>
-                        <a href="#">{customers.firstName} {customers.lastName}</a>
+                        <Link to={"/customers/" + customers.id}>
+                            {customers.firstName} {customers.lastName}
+                        </Link>
                     </td>
                     <td>{customers.email}</td>
                     <td>{customers.company}</td>
@@ -107,6 +112,8 @@ const CustomersPage = props => {
                 </tr>)}
                 </tbody>
             </table>
+            <TableLoader />
+
             {itemPerPage < filteredCustomers.length && (
                 <Pagination
                     currentPage={currentPage}

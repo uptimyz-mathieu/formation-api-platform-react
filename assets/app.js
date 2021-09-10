@@ -17,6 +17,8 @@ import InvoicesPage from "./pages/InvoicesPage";
 import LoginPage from "./pages/LoginPage";
 import CustomerPage from "./pages/CustomerPage";
 import InvoicePage from "./pages/InvoicePage";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 //require("../styles/app.css");
 
@@ -28,6 +30,7 @@ console.log("Hello World !!");
 const App = () => {
     return (
     <HashRouter>
+        <ToastContainer position={toast.POSITION.BOTTOM_LEFT}/>
         <Navbar />
 
         <main className="container pt-5">

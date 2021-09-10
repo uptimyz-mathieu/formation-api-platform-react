@@ -3,6 +3,7 @@ import Field from "../components/forms/Field";
 import LoginPage from "./LoginPage";
 import {Link} from "react-router-dom";
 import customersAPI from "../services/customersAPI";
+import {toast} from "react-toastify";
 
 const CustomerPage = ({match, history}) => {
     const { id = "new" } = match.params;
@@ -61,6 +62,7 @@ const CustomerPage = ({match, history}) => {
                 const response = await customersAPI.create(customer);
                 //To do : flash notif success
                 history.replace("/customers");
+                toast.success("Sucesse ! :-)");
             }
         } catch ({ response }) {
             const { violations } = response.data;
